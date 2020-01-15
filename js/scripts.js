@@ -33,6 +33,10 @@ $(document).ready(function() {
     var result = cups(num);
     console.log(result);
     $("#outputCup").text(result);
+    $("#outputOz").text(ounces(result));
+    $("#outputTbsp").text(tablespoons(result));
+    $("#outputTsp").text(teaspoons(result));
+    $("#outputMil").text(milli(result));
   });
 
   $("form#oz").submit(function(event) {
@@ -66,10 +70,9 @@ $(document).ready(function() {
     event.preventDefault();
 
     var num = parseInt($("#milInput").val());
-    var result = milliliters(cups(num));
+    var result = milli(cups(num));
     console.log(result);
     $("#outputMil").text(result);
   });
-  
 
 });
